@@ -25,11 +25,11 @@ public class ExpenseCategoryType implements Serializable {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private Long subCategoryId;
 	private String categoryTypeName;
-	private long categoryId;
-	public long getSubCategoryId() {
+	private Long categoryId;
+	public Long getSubCategoryId() {
 		return subCategoryId;
 	}
-	public void setSubCategoryId(long subCategoryId) {
+	public void setSubCategoryId(Long subCategoryId) {
 		this.subCategoryId = subCategoryId;
 	}
 	public String getCategoryTypeName() {
@@ -38,10 +38,10 @@ public class ExpenseCategoryType implements Serializable {
 	public void setCategoryTypeName(String categoryTypeName) {
 		this.categoryTypeName = categoryTypeName;
 	}
-	public long getCategoryId() {
+	public Long getCategoryId() {
 		return categoryId;
 	}
-	public void setCategoryId(long categoryId) {
+	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
 	}
 }

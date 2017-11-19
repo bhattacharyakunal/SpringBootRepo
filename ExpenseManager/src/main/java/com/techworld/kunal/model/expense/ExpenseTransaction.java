@@ -19,20 +19,27 @@ public class ExpenseTransaction implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private Long transactionId;
+	private Long expenseCategoryId;
 	private Long expenseCategoryTypeId;
 	private double amount;
 	private Date expenseDate;
 	private String remarks;
-	public long getTransactionId() {
+	public Long getTransactionId() {
 		return transactionId;
 	}
-	public void setTransactionId(long transactionId) {
+	public void setTransactionId(Long transactionId) {
 		this.transactionId = transactionId;
 	}
-	public long getExpenseCategoryTypeId() {
+	public Long getExpenseCategoryId() {
+		return expenseCategoryId;
+	}
+	public void setExpenseCategoryId(Long expenseCategoryId) {
+		this.expenseCategoryId = expenseCategoryId;
+	}
+	public Long getExpenseCategoryTypeId() {
 		return expenseCategoryTypeId;
 	}
-	public void setExpenseCategoryTypeId(long expenseCategoryTypeId) {
+	public void setExpenseCategoryTypeId(Long expenseCategoryTypeId) {
 		this.expenseCategoryTypeId = expenseCategoryTypeId;
 	}
 	public double getAmount() {

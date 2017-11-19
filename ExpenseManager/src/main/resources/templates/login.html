@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<script type="text/javascript"
+	src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/main.css" />
+
+</head>
+<body>
+	<form action="/login">
+		<div style="overflow: hidden; height: 100%">
+			<div style="float: left">
+				<br></br>
+			</div>
+			<table border="1" id="login-tab-outer">
+				<tr>
+					<td colspan="1">
+						<table id="login-tab-inner">
+							<tr>
+								<th id="login-th" colspan="3">Login to MyEdu..</th>
+							</tr>
+							<tr>
+								<td colspan="1"><label><b>Username</b></label></td>
+								<td colspan="2"><input type="text"
+									placeholder="Enter Username" name="uname" /></td>
+							</tr>
+							<tr>
+								<td colspan="1"><label><b>Password</b></label></td>
+								<td colspan="2"><input type="password"
+									placeholder="Enter Password" name="psw" /></td>
+							</tr>
+							<tr>
+								<td colspan="2"></td>
+								<td colspan="1">
+									<button type="submit">Login</button>
+								</td>
+							</tr>
+							<!--     <input type="checkbox" checked="checked"> Remember me -->
+							<tr>
+								<td colspan="3"><span class="psw">Forgot <a href="#">password?</a></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3"><span class="psw">New <a href="/signup">User?</a></span>
+								</td>
+							</tr>
+							<tr style="height: 100px;">
+							</tr>
+						</table>
+
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+</html>

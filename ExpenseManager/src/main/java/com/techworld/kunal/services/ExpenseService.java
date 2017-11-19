@@ -1,5 +1,9 @@
 package com.techworld.kunal.services;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +36,28 @@ public class ExpenseService {
 	}
 	
 	public String addExpenseTransaction(ExpenseTransaction expenseTransaction) {
+		if(expenseTransaction.getExpenseDate()==null) {
+			expenseTransaction.setExpenseDate(new Date());
+		}
 		expenseTransactionDAO.save(expenseTransaction);
 		return Constants.EXPENSE_ADDED_SUCCESSFULLY;
+	}
+	
+	public List<ExpenseCategory> getAllExpenseCategory(){
+		List<ExpenseCategory> expenseCategoryList=new ArrayList<>(); 
+		expenseCategoryDAO.findAll().iterator().forEachRemaining(expenseCategoryList::add);
+		return expenseCategoryList;
+	}
+	
+	public List<ExpenseCategoryType> getAllExpenseCategoryType(){
+		List<ExpenseCategoryType> expenseCategoryTypeList=new ArrayList<>(); 
+		expenseCategoryTypeDAO.findAll().iterator().forEachRemaining(expenseCategoryTypeList::add);
+		return expenseCategoryTypeList;
+	}
+	
+	public List<ExpenseTransaction> getAllExpenseTransaction(){
+		List<ExpenseTransaction> expenseTransactionList=new ArrayList<>();
+		expenseTransactionDAO.findAll().forEach(expenseTransactionList::add);
+		return expenseTransactionList;
 	}
 }

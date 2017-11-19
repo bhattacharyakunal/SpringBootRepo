@@ -1,5 +1,7 @@
 package com.techworld.kunal.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,5 +32,18 @@ public class ExpenseController {
 	@RequestMapping(method=RequestMethod.POST,value="/addExpenseTransaction")
 	public String addExpenseTransaction(@RequestBody ExpenseTransaction expenseTransaction) {
 		return expenseService.addExpenseTransaction(expenseTransaction);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET,value="/getAllExpenseCategory")
+	public List<ExpenseCategory> getAllExpenseCategory(){
+		return expenseService.getAllExpenseCategory();
+	}
+	@RequestMapping(method=RequestMethod.GET,value="/getAllExpenseCategoryType")
+	public List<ExpenseCategoryType> getAllExpenseCategoryType(){
+		return expenseService.getAllExpenseCategoryType();
+	}
+	@RequestMapping(method=RequestMethod.GET,value="/getAllExpenseTransaction")
+	public List<ExpenseTransaction> getAllExpenseTransaction(){
+		return expenseService.getAllExpenseTransaction();
 	}
 }

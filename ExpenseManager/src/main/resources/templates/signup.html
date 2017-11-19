@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<script type="text/javascript"
+	src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/main.css" />
+<script type="text/javascript">
+ function validate(){
+	 return false;
+ }
+</script>
+</head>
+<body>
+	<form th:action="@{/signup}" th:object="${userAccount}" method="post">
+		<div style="overflow: hidden; height: 100%">
+			<div style="float: left">
+				<br></br>
+			</div>
+			<table border="1" id="login-tab-outer">
+				<tr>
+					<td colspan="1">
+						<table id="login-tab-inner" cellpadding="2" cellspacing="2">
+						<tr>
+								<th id="login-th" colspan="3">Sign Up to ExpenseManager</th>
+							</tr>
+							<tr>
+								<td>UserName</td>
+								<td><input type="text" th:field="*{userName}" /></td>
+							</tr>
+							<tr>
+								<td>Password</td>
+								<td><input type="text" th:field="*{password}" /></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td><input type="submit" onsubmit="validate()" value="SignUp" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+</html>
